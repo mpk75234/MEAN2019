@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Output} from '@angular/core'
+import { Post } from '../post.model';
+import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-post-create',
   templateUrl: 'post-create.component.html',
@@ -8,12 +11,18 @@ import { Component, EventEmitter, Output} from '@angular/core'
 export class PostCreateComponent {
   enteredTitle = '';
   enteredValue = '';
-  @Output() postCreated = new EventEmitter();
-  onAddPost(){
+  @Output() postCreated = new EventEmitter<Post>();
+  onAddPost(form: NgForm){
+    if(form.invalid){
+      return;
+    }
     const post = {
-      title: this.enteredTitle,
-      content: this.enteredValue
+      title: form.value.title,
+      content: form.value.content
     };
     this.postCreated.emit(post);
+  }
+  onFormInvalid(){
+    return "debe escribe algo...";
   }
 }
