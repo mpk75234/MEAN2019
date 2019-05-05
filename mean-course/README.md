@@ -1,4 +1,5 @@
 # MeanCourse
+# Angular root is http://localhost:4200/index
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
