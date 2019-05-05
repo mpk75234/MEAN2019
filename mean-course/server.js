@@ -49,5 +49,5 @@ const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
 server.listen(port, ()=>{
-  console.log("WOK AN WOLL!");
+  console.log("rocking and rolling at port "+port);
 });
