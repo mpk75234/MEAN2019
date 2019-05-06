@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 import { PostsService } from '../posts.service';
 
@@ -24,5 +25,4 @@ export class PostCreateComponent {
   onFormInvalid(){
     return 'debe escribe algo...';
   }
-
 }
