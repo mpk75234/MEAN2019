@@ -11,13 +11,12 @@ app.use((req, res, next) =>{
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PATCH, OPTIONS');
   next();
 });
-//test /api/poasts POST functionality
+//test /api/posts POST functionality
 app.post('/api/posts', (req, res, next) =>{
   const post = req.body;
   console.log(post);
   res.status(201).json({
-    message: 'sup ninja chikken',
-    post: post
+    message: 'sup ninja chikken'
   });
 });
 

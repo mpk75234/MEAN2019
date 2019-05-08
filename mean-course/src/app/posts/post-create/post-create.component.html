@@ -11,7 +11,7 @@ required
 minlength="5"
 #title="ngModel"
 >
-<mat-error *ngIf="title.invalid">{{ onFormInvalid() }} </mat-error>
+<mat-error *ngIf="title.invalid">"ERROR"</mat-error>
 </mat-form-field>
 <mat-form-field>
 <textarea
@@ -22,7 +22,7 @@ required
 minlength="5"
 #content="ngModel"
 ></textarea>
-<mat-error *ngIf="content.invalid">{{ onFormInvalid() }}</mat-error>
+<mat-error *ngIf="content.invalid">"ERROR"</mat-error>
 </mat-form-field>
 <button
   mat-raised-button

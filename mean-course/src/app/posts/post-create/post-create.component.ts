@@ -22,7 +22,4 @@ export class PostCreateComponent {
     this.postsService.addPost(form.value.title, form.value.content);
     form.resetForm();
   }
-  onFormInvalid(){
-    return 'debe escribe algo...';
-  }
 }
