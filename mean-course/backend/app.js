@@ -29,10 +29,12 @@ app.post('/api/posts', (req, res, next) =>{
     content: req.body.content
   });
   //save it to mongodb :)
-  post.save();
-  console.log(post);
-  res.status(201).json({
-    message: 'post added successfully'
+  post.save().then(result =>{
+    console.log(result);
+    res.status(201).json({
+      message: "post saved to mongodb",
+      postId: result._id
+    });
   });
 });
 
@@ -41,7 +43,6 @@ app.get('/api/posts',(req, res, next)=>{
   Post.find({})
   .then((posts =>{
     res.status(200).json({
-      message: "mehsages are ready",
       posts: posts
     });
   }));
