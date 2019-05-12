@@ -38,7 +38,7 @@ app.post('/api/posts', (req, res, next) =>{
 
 app.get('/api/posts',(req, res, next)=>{
   //res.send('Hello from Express at port 3000'); kkkk
-  Post.find({}, {__v: 0})
+  Post.find({})
   .then((posts =>{
     res.status(200).json({
       message: "mehsages are ready",
